@@ -2,23 +2,28 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Chargement...</title>
+    <title>Chargement du serveur...</title>
     <style>
         body {
             margin: 0;
-            background: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
         }
-        img {
-            max-width: 90%;
-            max-height: 90%;
+        .background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background: url('https://i.postimg.cc/FKmr6vY9/Design-sans-titre-40.png') no-repeat center center;
+            background-size: cover;
         }
     </style>
 </head>
 <body>
-    <img src="https://i.postimg.cc/FKmr6vY9/Design-sans-titre-40.png" alt="Chargement...">
+    <div class="background"></div>
 </body>
 </html>
+
