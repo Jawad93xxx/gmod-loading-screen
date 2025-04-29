@@ -10,10 +10,66 @@
             background: url('https://i.postimg.cc/FKmr6vY9/Design-sans-titre-40.png') no-repeat center center fixed;
             background-size: cover;
             background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .progress-container {
+            width: 50%;
+            background-color: rgba(0,0,0,0.5);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .progress-bar {
+            height: 25px;
+            width: 0%;
+            background-color: #00bfff;
+            text-align: center;
+            line-height: 25px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: width 0.3s;
+        }
+
+        .percentage {
+            margin-top: 10px;
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
+
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar">0%</div>
+    </div>
+    <div class="percentage" id="percentage">Chargement... 0%</div>
+
+    <script>
+        let progress = 0;
+        const progressBar = document.getElementById('progress-bar');
+        const percentageText = document.getElementById('percentage');
+
+
+        const loading = setInterval(() => {
+            if (progress >= 100) {
+                clearInterval(loading);
+                percentageText.textContent = "Chargement terminé !";
+            } else {
+                progress++;
+                progressBar.style.width = progress + '%';
+                progressBar.textContent = progress + '%';
+                percentageText.textContent = "Chargement... " + progress + "%";
+            }
+        }, 50); 
+    </script>
+
 </body>
 </html>
 
