@@ -10,45 +10,10 @@
             background: url('https://i.postimg.cc/tCG3qRgh/CHAR-2.png') no-repeat center center fixed;
             background-size: cover;
             background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            font-family: Arial, sans-serif;
-        }
-
-        .percentage {
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-            position: absolute;
-            bottom: 33%;
         }
     </style>
 </head>
 <body>
-
-    <div class="percentage" id="percentage">0%</div>
-
-    <script>
-        let progress = 0;
-        const percentageText = document.getElementById('percentage');
-
-        // Calcul pour atteindre 100% en 3 minutes (3 minutes = 180 secondes = 180 000 ms)
-        const totalDuration = 180000; // 3 minutes en millisecondes
-        const interval = totalDuration / 100; // Divisé par 100 pour chaque incrément de 1%
-        
-        const loading = setInterval(() => {
-            if (progress >= 100) {
-                clearInterval(loading);
-                percentageText.textContent = "Chargement terminé !";
-            } else {
-                progress++;
-                percentageText.textContent = progress + "%";
-            }
-        }, interval);
-    </script>
 
 </body>
 </html>
